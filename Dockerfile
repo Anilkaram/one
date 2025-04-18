@@ -1,5 +1,5 @@
 
-FROM java-17-amazon-corretto
+FROM amazoncorretto:17
 # Copy the WAR file into the Tomcat webapps directory
 COPY target/*.war /home/ec2-user/agent/
 #/usr/local/tomcat/webapps/
