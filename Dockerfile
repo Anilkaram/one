@@ -1,8 +1,4 @@
-
-FROM amazoncorretto:17
-# Copy the WAR file into the Tomcat webapps directory
-WORKDIR /app
-COPY target/*.war /app/
-#/usr/local/tomcat/webapps/
-EXPOSE 8000
-CMD ["java", "-war", "myweb-8.6.10.war"]
+FROM tomcat:8.0.20-jre8
+COPY tomcat-users.xml /usr/local/tomcat/config/
+COPY target/*.war /usr/local/tomcat/webapps/
+EXPOSE 8080
